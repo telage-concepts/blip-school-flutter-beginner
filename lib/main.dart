@@ -3,6 +3,8 @@ import 'package:blipschoolflutterbeginner/pages/conclusionanimation.dart';
 import 'package:blipschoolflutterbeginner/pages/customanimation.dart';
 import 'package:blipschoolflutterbeginner/pages/home_page.dart';
 import 'package:blipschoolflutterbeginner/pages/animation.dart';
+import 'package:blipschoolflutterbeginner/workingwithdata/fetchingdatafromapi.dart';
+import 'package:blipschoolflutterbeginner/workingwithdata/list.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -22,7 +24,6 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Home Page'),
-
     );
   }
 }
@@ -37,7 +38,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,13 +56,72 @@ class _MyHomePageState extends State<MyHomePage> {
               'Animations',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> AnimatedContainerExample()));}, child: Text('Go to Animationcontainer')),
-            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> AnimatedOpacityExample()));}, child: Text('Go to animated opacity')),
-            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> CustomAnimationExample()));}, child: Text('Go to Custom Animation')),
-            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> CombinedAnimationExample()));}, child: Text('Go to putting everything together')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AnimatedContainerExample()));
+                },
+                child: Text('Go to Animationcontainer')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AnimatedOpacityExample()));
+                },
+                child: Text('Go to animated opacity')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomAnimationExample()));
+                },
+                child: Text('Go to Custom Animation')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CombinedAnimationExample()));
+                },
+                child: Text('Go to putting everything together')),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'working with data (listview, grid view and REST Api)',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyListView()));
+                },
+                child: Text('Go to Animationcontainer')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyGridView()));
+                },
+                child: Text('Go to animated opacity')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyHttpWidget()));
+                },
+                child: Text('Go to Custom Animation')),
           ],
         ),
-      ),// This trailing comma makes auto-formatting nicer for build methods.
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
