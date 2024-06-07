@@ -1,24 +1,34 @@
 import 'package:flutter/material.dart';
 
-class namedRoute extends StatefulWidget {
-  const namedRoute({super.key});
-
+class AnimatedOpacityExample extends StatefulWidget {
   @override
-  State<namedRoute> createState() => _namedRouteState();
+  _AnimatedOpacityExampleState createState() => _AnimatedOpacityExampleState();
 }
 
-class _namedRouteState extends State<namedRoute> {
-
+class _AnimatedOpacityExampleState extends State<AnimatedOpacityExample> {
+  bool _isVisible = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('TO DO'),
-        elevation: 0,
-      ),
+      appBar: AppBar(title: Text('AnimatedOpacity Example')),
       body: Center(
-        child:  Text('second Screen'),
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              _isVisible = !_isVisible;
+            });
+          },
+          child: AnimatedOpacity(
+            opacity: _isVisible ? 1.0 : 0.0,
+            duration: Duration(seconds: 1),
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.green,
+            ),
+          ),
+        ),
       ),
     );
   }

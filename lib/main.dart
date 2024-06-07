@@ -1,5 +1,8 @@
+import 'package:blipschoolflutterbeginner/pages/animatedcontainer.dart';
+import 'package:blipschoolflutterbeginner/pages/conclusionanimation.dart';
+import 'package:blipschoolflutterbeginner/pages/customanimation.dart';
 import 'package:blipschoolflutterbeginner/pages/home_page.dart';
-import 'package:blipschoolflutterbeginner/pages/namedroute.dart';
+import 'package:blipschoolflutterbeginner/pages/animation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,9 +22,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Home Page'),
-      routes: {
-        '/namedroute': (context) => namedRoute(),
-      },
+
     );
   }
 }
@@ -52,10 +53,13 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              'the very First Page',
+              'Animations',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));}, child: Text('Go to Home Page'))
+            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> AnimatedContainerExample()));}, child: Text('Go to Animationcontainer')),
+            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> AnimatedOpacityExample()));}, child: Text('Go to animated opacity')),
+            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> CustomAnimationExample()));}, child: Text('Go to Custom Animation')),
+            ElevatedButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=> CombinedAnimationExample()));}, child: Text('Go to putting everything together')),
           ],
         ),
       ),// This trailing comma makes auto-formatting nicer for build methods.
